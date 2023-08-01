@@ -1,6 +1,7 @@
 # Movie-Genre-Prediction
 
 link: https://huggingface.co/spaces/competitions/movie-genre-prediction
+
 This repository present the solution which allow to get 1st rank to this competition.
 
 ## dataset
@@ -15,17 +16,17 @@ The solution is based on:
 - a domain transfer on roberta-large using Mask Language modeling.
 - a roberta-large finetuned using 15-folds
 - a roberta large finetuned using 15-folds using pseudo label on Test set (improve only public LB)
-- use of TeacherFreeLoss function which simulate a virtual teacher
+- use of [TeacherFreeLoss](https://arxiv.org/abs/1909.11723) [1] function which simulate a virtual teacher
 - Average pooling instead of using CLS token
 
-0) download data: Create_folds.ipynb
+0) download data: [Create_folds.ipynb](https://github.com/Shiro-LK/CompetitionsML/blob/main/huggingface_competition/movie-genre-prediction/Create_folds.ipynb)
 
-1) apply a domain transfer on roberta-large : MLM.ipynb
+1) apply a domain transfer on roberta-large : [MLM.ipynb](https://github.com/Shiro-LK/CompetitionsML/blob/main/huggingface_competition/movie-genre-prediction/MLM.ipynb)
 The checkpoint of the MLM of roberta-large on movie dataset can be found here : https://huggingface.co/Shiro/roberta-large-movie-genre
 
-2) finetune roberta-large 15-fold and generate prediction on test set : Classifier-roberta-ft-15fold-tf.ipynb
+2) finetune roberta-large 15-fold and generate prediction on test set : [Classifier-roberta-ft-15fold-tf.ipynb](https://github.com/Shiro-LK/CompetitionsML/blob/main/huggingface_competition/movie-genre-prediction/Classifier-roberta-ft-15fold-tf.ipynb)
 
-3) finetune roberta-large 15 folds using the pseudo label on the test set, semi-supervised learning approach : Classifier-roberta-ft-15fold-tf-PL.ipynb
+3) finetune roberta-large 15 folds using the pseudo label on the test set, semi-supervised learning approach : [Classifier-roberta-ft-15fold-tf-PL.ipynb](https://github.com/Shiro-LK/CompetitionsML/blob/main/huggingface_competition/movie-genre-prediction/Classifier-roberta-ft-15fold-tf-PL.ipynb)
 
 ## Results
 
@@ -40,3 +41,7 @@ The checkpoint of the MLM of roberta-large on movie dataset can be found here : 
 transformers=4.21.3
 
 torch=1.12
+
+## Sources
+
+[1] [Revisiting Knowledge Distillation via Label Smoothing Regularization](https://arxiv.org/abs/1909.11723), Yuan et al.
