@@ -32,7 +32,7 @@ The checkpoint of the MLM of roberta-large on movie dataset can be found here : 
 
 |Model 15 fold| CV | Public LB  | Private LB  | 
 |---|---|---|---| 
-|roberta-large + MLM   | 0.445  | 0.4456  | 0.4412  | 
+|roberta-large + MLM   | 0.445  | 0.4437  | 0.4412  | 
 |roberta-large + MLM + PL   | 0.456  | 0.4456  | 0.4412  | 
 
 
